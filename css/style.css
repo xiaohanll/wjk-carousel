@@ -1,0 +1,132 @@
+/* 初始化 */
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: #ccc; */
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* 盒子 */
+.box {
+  width: 958px;
+  height: 284px;
+  /* border: 1px solid #ccc; */
+  margin: 66px auto;
+  /* 子绝父相：使图片相对于图片列表定位 */
+  position: relative;
+  /* 显示区域外的内容不显示 */
+  overflow: hidden; 
+}
+
+/* 设置图片样式 */
+img {
+  width: 100%; 
+  height: 90%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+  /* 设置img的对齐方式：img的顶边与行内元素的最高顶边对齐 */
+  /* vertical-align: top; */
+}
+
+/* 设置轮播图片的ul */
+.imgs {
+  width: 730px;
+  height: 284px;
+  /* 子绝父相：li相对于box定位 */
+  position: absolute;
+  /* 居中 */
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,0%);
+}
+
+/* 设置li，使图片堆叠在一起 */
+.imgs li {
+  position: absolute;
+  width: 730px;
+  transition: 0.5s;
+}
+
+/* 左右按钮的样式 */
+#left,#right {
+  position: absolute;
+  /* background-color:#ccc; */
+  z-index: 99;
+  font-size: 24px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  /* 水平居中 */
+  text-align: center;
+  /* 添加半透明 */
+  opacity: 0.5;
+  /* 设置位置 */
+  top: 50%;
+}
+#left {
+  left: 2px;
+}
+#right {
+  right: 2px;
+}
+
+/* 鼠标移入左右按钮时 按钮样式的变化 */
+#left:hover {
+  opacity: 0.9;
+}
+#right:hover {
+  opacity: 0.9;
+}
+
+/* 把图片错开 */
+.imgs .one {
+  /* 水平向左偏移150px 缩小至0.9倍 */
+  transform: translate(-150px) scale(0.9);
+  z-index: 1;
+}
+.imgs .two {
+  z-index: 2;
+}
+.imgs .three {
+  /* 水平向右偏移150px 缩小至0.9倍 */
+  transform: translateX(150px) scale(0.9);
+  z-index: 1;
+}
+.imgs .four {
+  transform: scale(0.9);
+}
+.imgs .five {
+  transform: scale(0.9);
+}
+.imgs .six {
+  transform: scale(0.9);
+}
+
+/* 设置小圆圈的样式 */
+.list {
+  width: 114px;
+  /* background-color: skyblue; */
+  position: absolute;
+  z-index: 99;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -81px;
+}
+.list li {
+  float: left;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(234, 234, 234, .7);
+  margin: 0 2px;
+  cursor: pointer;
+}
+/* 小圆圈点击过的样式 */
+.list .change {
+  background-color: rgba(234, 123, 123, .7);
+}
